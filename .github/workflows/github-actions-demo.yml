@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: 
   push:
     branches: [main]
-    papaths-ignore: [.github/**]
+    paths-ignore: [.github/**]
   pull_request:
     branches: [main]
   schedule:
@@ -13,7 +13,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: The event that trigger the wokrflow
+        run: |
           echo "🎉 The job was triggered by event: ${{ github.event_name }}"
           echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
   
